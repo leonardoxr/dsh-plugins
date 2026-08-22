@@ -1,0 +1,9 @@
+# Master-repository generated files
+.DS_Store
+Thumbs.db
+
+# Do not vendor plugin dependencies or build output at collection level
+**/node_modules/
+**/.pnpm-store/
+**/coverage/
+**/.cache/
