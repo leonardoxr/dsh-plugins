@@ -19,3 +19,6 @@
 [submodule "dsh-workspace-git"]
 	path = dsh-workspace-git
 	url = https://github.com/leonardoxr/dsh-workspace-git.git
+[submodule "dsh-coding-tools"]
+	path = dsh-coding-tools
+	url = https://github.com/leonardoxr/dsh-coding-tools.git
