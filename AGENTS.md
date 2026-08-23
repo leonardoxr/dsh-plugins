@@ -5,6 +5,7 @@ This is a coordination repository. Plugin directories retain independent Git his
 ## Rules
 
 - Never modify DeepSeek Harness source.
+- Never restart DSH Web without asking the user first and receiving explicit approval.
 - Mount plugins through DSH profiles and `cordis.patch.yml`; do not patch DSH.
 - Keep changes scoped to the plugin being changed.
 - Preserve plugin-specific AGENTS.md instructions.
