@@ -32,12 +32,14 @@ Properties:
 
 - **One row per plugin, canonical IDs.** Each aggregated plugin keeps the same
   Cordis row ID its standalone bundle uses, so profile-patch config overrides
-  keep working unchanged when switching between standalone and all-in-one.
-- **Self-backing-off guards.** Every generated insert row carries a `!!js`
-  guard that disables the row whenever an earlier loader entry already mounts
-  the same package — standalone installs win, the aggregate fills the gaps.
-  Because guards only see earlier entries, install the all-in-one *last*
-  (`dsh plugin add` does this automatically).
+  keep working unchanged when migrating from the standalones to all-in-one.
+- **Either/or — never both.** The suite replaces the standalone bundles.
+  Mounting a standalone bundle and the suite together is boot-fatal by loader
+  design ("duplicate loader entry id", even if one row is disabled). Remove
+  the standalone installs before adding the suite. Every insert also carries
+  a `!!js` back-off guard against earlier same-package mounts under a
+  different ID; install the all-in-one *last* (`dsh plugin add` does this
+  automatically) so guards can see everything mounted before it.
 - **Generated, never hand-edited.** `aggregate.yml` is the single source of
   truth; `package.json` dependencies and `cordis.patch.yml` are produced by
   `scripts/aggregate.mjs`:

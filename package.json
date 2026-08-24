@@ -1,6 +1,6 @@
 {
   "name": "dsh-all-in-one",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "All-in-one DeepSeek Harness bundle: one install mounts the whole leonardoxr DSH plugin collection (coding tools, plugin/config managers, sidebar, usage meters, updaters and more).",
   "license": "MIT",
   "author": {

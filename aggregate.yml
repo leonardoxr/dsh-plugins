@@ -10,10 +10,8 @@
 #
 # Fields per plugin:
 #   package   npm package name of the plugin (also the loader row "name")
-#   id        the plugin's canonical standalone row ID. The suite mounts it as
-#             "aio-<id>" and emits a conditional disable of <id> so standalone
-#             and suite never double-mount; profile overrides targeting the
-#             suite-provided plugin should use the "aio-" ID.
+#   id        the plugin's canonical standalone row ID, so profile-patch config
+#             overrides keep working after migrating to the suite
 #   version   exact upstream version this aggregate pins (informational + guard)
 #   channel   npm            -> dependencies entry is the exact npm version
 #              github-release -> dependencies entry is the release tarball URL
@@ -23,7 +21,7 @@
 
 package:
   name: dsh-all-in-one
-  version: 0.2.0
+  version: 0.3.0
 
 plugins:
   # --- host tools -----------------------------------------------------------
