@@ -21,7 +21,7 @@
 
 package:
   name: dsh-all-in-one
-  version: 0.3.2
+  version: 0.3.3
 
 plugins:
   # --- host tools -----------------------------------------------------------
