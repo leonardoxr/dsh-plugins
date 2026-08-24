@@ -21,7 +21,7 @@
 
 package:
   name: dsh-all-in-one
-  version: 0.3.4
+  version: 0.3.5
 
 plugins:
   # --- host tools -----------------------------------------------------------
@@ -36,11 +36,6 @@ plugins:
     version: 0.2.0
     channel: github-release
     spec: https://github.com/leonardoxr/dsh-plugin-manager/releases/download/v0.2.0/leonardoxr-dsh-plugin-manager-0.2.0.tgz
-
-  - package: dsh-config-manager
-    id: config-manager
-    version: 0.1.51
-    channel: npm
 
   - package: dsh-routed-subagent
     id: routed-subagent
@@ -99,9 +94,9 @@ plugins:
 
   - package: dsh-companion
     id: dsh-companion
-    version: 0.2.0
+    version: 0.2.2
     channel: github-release
-    spec: https://github.com/leonardoxr/dsh-companion/releases/download/v0.2.0/dsh-companion-0.2.0.tgz
+    spec: https://github.com/leonardoxr/dsh-companion/releases/download/v0.2.2/dsh-companion-0.2.2.tgz
 
 # Extra patch entries contributed by the aggregate itself.
 extraRows:
