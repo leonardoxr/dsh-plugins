@@ -9,6 +9,9 @@ A master repository for DeepSeek Harness plugins. Each plugin remains an indepen
 | [dsh-auto-chat-titles](./dsh-auto-chat-titles) | [leonardoxr/dsh-auto-chat-titles](https://github.com/leonardoxr/dsh-auto-chat-titles) | Semantic, configurable chat titles |
 | [dsh-better-sidebar](./dsh-better-sidebar) | [leonardoxr/DSH-better-sidebar](https://github.com/leonardoxr/DSH-better-sidebar) | Sidebar workbench and extension API |
 | [dsh-codex-usage](./dsh-codex-usage) | [leonardoxr/dsh-codex-usage](https://github.com/leonardoxr/dsh-codex-usage) | Codex usage UI |
+| [dsh-conversation-stats](./dsh-conversation-stats) | [leonardoxr/dsh-conversation-stats](https://github.com/leonardoxr/dsh-conversation-stats) | Conversation statistics row |
+| [dsh-image-preview](./dsh-image-preview) | [leonardoxr/dsh-image-preview](https://github.com/leonardoxr/dsh-image-preview) | Inline image previews and clipboard copying |
+| [dsh-plugin-manager](./dsh-plugin-manager) | [leonardoxr/dsh-plugin-manager](https://github.com/leonardoxr/dsh-plugin-manager) | Profile plugin management |
 | [dsh-companion](./dsh-companion) | [leonardoxr/dsh-companion](https://github.com/leonardoxr/dsh-companion) | Read-only workspace/session API and notifications |
 | [dsh-native](./dsh-native) | [leonardoxr/dsh-native](https://github.com/leonardoxr/dsh-native) | Native desktop and mobile shell for DSH web servers |
 | [dsh-routed-subagent](./dsh-routed-subagent) | [leonardoxr/dsh-routed-subagent](https://github.com/leonardoxr/dsh-routed-subagent) | Complexity-routed subagent delegation |

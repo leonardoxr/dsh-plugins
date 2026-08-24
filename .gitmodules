@@ -22,3 +22,12 @@
 [submodule "dsh-coding-tools"]
 	path = dsh-coding-tools
 	url = https://github.com/leonardoxr/dsh-coding-tools.git
+[submodule "dsh-conversation-stats"]
+	path = dsh-conversation-stats
+	url = https://github.com/leonardoxr/dsh-conversation-stats.git
+[submodule "dsh-image-preview"]
+	path = dsh-image-preview
+	url = https://github.com/leonardoxr/dsh-image-preview.git
+[submodule "dsh-plugin-manager"]
+	path = dsh-plugin-manager
+	url = https://github.com/leonardoxr/dsh-plugin-manager.git
