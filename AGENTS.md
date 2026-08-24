@@ -39,6 +39,18 @@ Any option a user can toggle at runtime ships in the DSH settings UI, like every
 
 Deployment-level tunables still belong in the host-side Schemastery `Config`; the settings UI carries the user's runtime preferences.
 
+### Hot-reload development loop
+
+Hot module reload is enabled in this deployment: the web profile patch (`C:\Users\leona\.dsh\profiles\web\cordis.patch.yml`) re-enables the harness-shipped Cordis HMR service with watchers on every plugin's build output (`lib/`, `dist/` for `dsh-companion`). Full details in [HOT-RELOAD.md](./HOT-RELOAD.md).
+
+- Never restart DSH Web to apply plugin code changes. Run a build watcher in the plugin you are editing (`pnpm exec tsdown --watch`, or `pnpm dev` where defined) — each save rebuilds `lib/` and the running harness hot-reloads that plugin in place. Failed builds roll back to the previous version automatically.
+- The profile patch and home patch files are themselves hot: adding, removing, disabling, or retuning rows applies live without a restart. Long-lived rows belong there — `--patch` overlays passed on argv are NOT watched and stay frozen until the next boot.
+- When a new plugin is mounted or an existing one needs a permanent config override, edit the watched profile patch rather than passing another argv overlay.
+- Reload units are whole plugin entry files: a plugin that provides a service cascades disposal through everything injecting it, so expect dependent churn on save. Registering everything through `ctx` keeps that safe.
+- Browser-only client bundles (`client/`) are not hot: refresh the page after their rebuild. Host code never needs a refresh or restart.
+- Touching framework files (the CLI entry's dependency tree) intentionally triggers a full process restart — do not work around it; keep plugin code self-contained so it stays in the fast path.
+- After changing what HMR watches (the `- id: hmr` block's `root` list when a plugin gains a different output directory), one `dsh web` boot is needed — ask the user first per the rules above.
+
 ## New plugin lifecycle
 
 Whenever we create a new plugin:
