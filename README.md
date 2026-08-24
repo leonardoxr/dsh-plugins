@@ -75,8 +75,6 @@ channel/spec in `aggregate.yml` and regenerating.
 
 Plugins are Cordis modules with optional host and client halves. The package manifest declares the DSH bundle patch and client injection metadata. Host code must use public DSH services/routes; client code must use injected services and must unload cleanly.
 
-For better-sidebar integrations, see [`dsh-better-sidebar/AGENTS.md`](./dsh-better-sidebar/AGENTS.md). Key rules: use `inject = ['betterSidebar']`, register tabs/viewers through `ctx.betterSidebar`, wrap registration in `ctx.effect()` so the disposer is HMR-safe, use package-prefixed IDs, and keep `dsh-better-sidebar` as an optional peer dependency. The service exists only on the client side.
-
 ## Local development
 
 ```sh
@@ -87,7 +85,7 @@ git clone --recurse-submodules <master-repository-url> dsh-plugins
 git submodule update --init --recursive
 
 # Work inside one plugin
-cd dsh-better-sidebar
+cd <plugin-directory>
 pnpm install
 pnpm build
 ```
@@ -98,4 +96,3 @@ Install a local plugin into a DSH web profile using the official plugin mechanis
 
 - [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)
 - [DSH plugin registry](https://github.com/dsh-external/plugin-registry)
-- [better-sidebar consumer guide](./dsh-better-sidebar/AGENTS.md)
