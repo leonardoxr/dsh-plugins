@@ -10,8 +10,10 @@
 #
 # Fields per plugin:
 #   package   npm package name of the plugin (also the loader row "name")
-#   id        canonical Cordis row ID used by the plugin's own standalone bundle;
-#             reusing it keeps existing profile-patch config overrides working
+#   id        the plugin's canonical standalone row ID. The suite mounts it as
+#             "aio-<id>" and emits a conditional disable of <id> so standalone
+#             and suite never double-mount; profile overrides targeting the
+#             suite-provided plugin should use the "aio-" ID.
 #   version   exact upstream version this aggregate pins (informational + guard)
 #   channel   npm            -> dependencies entry is the exact npm version
 #              github-release -> dependencies entry is the release tarball URL
@@ -21,7 +23,7 @@
 
 package:
   name: dsh-all-in-one
-  version: 0.1.2
+  version: 0.2.0
 
 plugins:
   # --- host tools -----------------------------------------------------------
