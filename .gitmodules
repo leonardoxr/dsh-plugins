@@ -1,9 +1,6 @@
 [submodule "dsh-auto-chat-titles"]
 	path = dsh-auto-chat-titles
 	url = https://github.com/leonardoxr/dsh-auto-chat-titles.git
-[submodule "dsh-better-sidebar"]
-	path = dsh-better-sidebar
-	url = https://github.com/leonardoxr/DSH-better-sidebar.git
 [submodule "dsh-codex-usage"]
 	path = dsh-codex-usage
 	url = https://github.com/leonardoxr/dsh-codex-usage.git

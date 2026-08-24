@@ -1,3 +1,5 @@
+English | [简体中文](README.zh.md)
+
 # DSH Plugins
 
 A master repository for DeepSeek Harness plugins. Each plugin remains an independent Git repository and is included here as a Git submodule, so plugin history, branches, releases, and CI stay isolated.
@@ -7,12 +9,17 @@ A master repository for DeepSeek Harness plugins. Each plugin remains an indepen
 | Plugin | Repository | Purpose |
 |---|---|---|
 | [dsh-auto-chat-titles](./dsh-auto-chat-titles) | [leonardoxr/dsh-auto-chat-titles](https://github.com/leonardoxr/dsh-auto-chat-titles) | Semantic, configurable chat titles |
-| [dsh-better-sidebar](./dsh-better-sidebar) | [leonardoxr/DSH-better-sidebar](https://github.com/leonardoxr/DSH-better-sidebar) | Sidebar workbench and extension API |
 | [dsh-claude-usage](./dsh-claude-usage) | [leonardoxr/dsh-claude-usage](https://github.com/leonardoxr/dsh-claude-usage) | Claude usage UI |
 | [dsh-codex-usage](./dsh-codex-usage) | [leonardoxr/dsh-codex-usage](https://github.com/leonardoxr/dsh-codex-usage) | Codex usage UI |
 | [dsh-coding-tools](./dsh-coding-tools) | [leonardoxr/dsh-coding-tools](https://github.com/leonardoxr/dsh-coding-tools) | LSP, ast-grep and versioned editing tools |
-| [dsh-config-manager](./dsh-config-manager) | [xiajiajun516/dsh-config-manager](https://github.com/xiajiajun516/dsh-config-manager) | Credentials, presets and settings management |
+| [dsh-companion](./dsh-companion) | [leonardoxr/dsh-companion](https://github.com/leonardoxr/dsh-companion) | Read-only workspace/session API and notifications |
+| [dsh-harness-updater](./dsh-harness-updater) | [leonardoxr/dsh-harness-updater](https://github.com/leonardoxr/dsh-harness-updater) | Claude Code / Codex CLI update detection and one-click updates |
+| [dsh-image-preview](./dsh-image-preview) | [leonardoxr/dsh-image-preview](https://github.com/leonardoxr/dsh-image-preview) | Inline image previews and clipboard copying |
+| [dsh-native](./dsh-native) | [leonardoxr/dsh-native](https://github.com/leonardoxr/dsh-native) | Native desktop and mobile shell for DSH web servers |
+| [dsh-plugin-manager](./dsh-plugin-manager) | [leonardoxr/dsh-plugin-manager](https://github.com/leonardoxr/dsh-plugin-manager) | Profile plugin management |
+| [dsh-routed-subagent](./dsh-routed-subagent) | [leonardoxr/dsh-routed-subagent](https://github.com/leonardoxr/dsh-routed-subagent) | Complexity-routed subagent delegation |
 | [dsh-status-bar-config](./dsh-status-bar-config) | [leonardoxr/dsh-status-bar-config](https://github.com/leonardoxr/dsh-status-bar-config) | Conversation statistics row |
+| [dsh-workspace-git](./dsh-workspace-git) | [leonardoxr/dsh-workspace-git](https://github.com/leonardoxr/dsh-workspace-git) | Workspace Git integration |
 
 ## dsh-all-in-one
 
@@ -55,13 +62,6 @@ Properties:
 Dependency pins use exact npm versions where packages are published, and
 GitHub Release tarball URLs otherwise; flip a pin to npm by editing its
 channel/spec in `aggregate.yml` and regenerating.
-| [dsh-harness-updater](./dsh-harness-updater) | [leonardoxr/dsh-harness-updater](https://github.com/leonardoxr/dsh-harness-updater) | Claude Code / Codex CLI update detection and one-click updates |
-| [dsh-image-preview](./dsh-image-preview) | [leonardoxr/dsh-image-preview](https://github.com/leonardoxr/dsh-image-preview) | Inline image previews and clipboard copying |
-| [dsh-plugin-manager](./dsh-plugin-manager) | [leonardoxr/dsh-plugin-manager](https://github.com/leonardoxr/dsh-plugin-manager) | Profile plugin management |
-| [dsh-companion](./dsh-companion) | [leonardoxr/dsh-companion](https://github.com/leonardoxr/dsh-companion) | Read-only workspace/session API and notifications |
-| [dsh-native](./dsh-native) | [leonardoxr/dsh-native](https://github.com/leonardoxr/dsh-native) | Native desktop and mobile shell for DSH web servers |
-| [dsh-routed-subagent](./dsh-routed-subagent) | [leonardoxr/dsh-routed-subagent](https://github.com/leonardoxr/dsh-routed-subagent) | Complexity-routed subagent delegation |
-| [dsh-workspace-git](./dsh-workspace-git) | [leonardoxr/dsh-workspace-git](https://github.com/leonardoxr/dsh-workspace-git) | Workspace Git integration |
 
 ## Repository model
 
