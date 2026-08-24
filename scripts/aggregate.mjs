@@ -66,6 +66,11 @@ for (const p of [...enabled].sort((a, b) => a.package.localeCompare(b.package)))
 
 const pkg = JSON.parse(readFileSync(pkgPath, 'utf8'));
 pkg.dependencies = deps;
+// The manifest is also the source of truth for the published package version,
+// so a suite release can never drift from its own pins.
+pkg.name = manifest.package.name;
+pkg.version = manifest.package.version;
+if (manifest.package.description) pkg.description = manifest.package.description;
 const nextPkgText = JSON.stringify(pkg, null, 2) + '\n';
 
 // --- patch ------------------------------------------------------------------
