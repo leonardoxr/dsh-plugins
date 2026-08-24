@@ -21,7 +21,7 @@
 
 package:
   name: dsh-all-in-one
-  version: 0.1.1
+  version: 0.1.2
 
 plugins:
   # --- host tools -----------------------------------------------------------
@@ -44,9 +44,9 @@ plugins:
 
   - package: dsh-routed-subagent
     id: routed-subagent
-    version: 0.3.0
+    version: 0.3.1
     channel: github-release
-    spec: https://github.com/leonardoxr/dsh-routed-subagent/releases/download/v0.3.0/dsh-routed-subagent-0.3.0.tgz
+    spec: https://github.com/leonardoxr/dsh-routed-subagent/releases/download/v0.3.1/dsh-routed-subagent-0.3.1.tgz
 
   - package: dsh-status-bar-config
     id: dsh-status-bar-config
@@ -93,9 +93,9 @@ plugins:
 
   - package: dsh-image-preview
     id: dsh-image-preview
-    version: 0.3.0
+    version: 0.3.1
     channel: github-release
-    spec: https://github.com/leonardoxr/dsh-image-preview/releases/download/v0.3.0/dsh-image-preview-0.3.0.tgz
+    spec: https://github.com/leonardoxr/dsh-image-preview/releases/download/v0.3.1/dsh-image-preview-0.3.1.tgz
 
   - package: dsh-companion
     id: dsh-companion
