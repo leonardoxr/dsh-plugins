@@ -21,7 +21,7 @@
 
 package:
   name: dsh-all-in-one
-  version: 0.1.0
+  version: 0.1.1
 
 plugins:
   # --- host tools -----------------------------------------------------------
@@ -63,8 +63,9 @@ plugins:
   # --- UI extensions --------------------------------------------------------
   - package: dsh-better-sidebar
     id: better-sidebar
-    version: 0.15.2
-    channel: npm
+    version: 0.15.3
+    channel: github-release
+    spec: https://github.com/leonardoxr/DSH-better-sidebar/releases/download/v0.15.3/dsh-better-sidebar-0.15.3.tgz
 
   - package: dsh-auto-chat-titles
     id: auto-chat-titles

@@ -47,7 +47,7 @@
   "dependencies": {
     "@leonardoxr/dsh-plugin-manager": "https://github.com/leonardoxr/dsh-plugin-manager/releases/download/v0.2.0/leonardoxr-dsh-plugin-manager-0.2.0.tgz",
     "dsh-auto-chat-titles": "https://github.com/leonardoxr/dsh-auto-chat-titles/releases/download/v0.1.0/dsh-auto-chat-titles-0.1.0.tgz",
-    "dsh-better-sidebar": "0.15.2",
+    "dsh-better-sidebar": "https://github.com/leonardoxr/DSH-better-sidebar/releases/download/v0.15.3/dsh-better-sidebar-0.15.3.tgz",
     "dsh-claude-usage": "https://github.com/leonardoxr/dsh-claude-usage/releases/download/v0.1.0/dsh-claude-usage-0.1.0.tgz",
     "dsh-codex-usage": "https://github.com/leonardoxr/dsh-codex-usage/releases/download/v0.1.5/dsh-codex-usage-0.1.5.tgz",
     "dsh-coding-tools": "https://github.com/leonardoxr/dsh-coding-tools/releases/download/v0.1.6/dsh-coding-tools-0.1.6.tgz",
