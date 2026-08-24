@@ -26,6 +26,19 @@ Follow the official guides at https://deepseek-harness.github.io/deepseek-harnes
 - Layer order matters: bundle patches apply in the profile's `dsh.profile.bundles` order, then the profile patch, then the home patch, then `--patch` overlays in argv order. Later layers win per row and replace a row's entire config value — overrides must restate every key, no deep merging.
 - Packaging: an installable plugin is a bundle whose `package.json` declares `dsh.bundle` pointing at its `cordis.patch.yml`; patch rows reference modules by package name. For git-host installs ship a self-contained `prepare` script that builds the published entry points from source without assuming sibling monorepo checkouts.
 
+### Always expose settings in the Web UI
+
+Any option a user can toggle at runtime ships in the DSH settings UI, like every existing plugin does — never bury preferences behind hand-edited YAML, env vars, or code edits. Follow the established house pattern:
+
+- Give the plugin a client half with `inject = ['slots', 'settingsScope']` and declare `@deepseek-ai/dsh-client-ui-settings` under `dsh.client.inject` in `package.json`; add `import type {} from '@deepseek-ai/dsh-client-ui-settings/client'` for the slot type augmentation.
+- Persist preferences through a namespaced settings scope: `ctx.settingsScope.bind<Settings>({ namespace: '<plugin-name>', decode })`.
+- Register the settings card through the slot API inside a lifecycle-managed registration: `ctx.slots.inject('settings.plugin.item', () => ctx.slots.register({ name: 'settings.plugin.item', key: '<plugin-name>' }, SettingsCard))`.
+- Build the card like the existing ones (`SettingsCard.tsx`): typed draft state, explicit save/reset actions, styles scoped with a plugin prefix and themed only via DSH design tokens (`--dsw-alias-*` / `--ds-*`) so skins work.
+- Keep it HMR-safe (all registrations via `ctx.effect`/`ctx.slots.inject` disposers) and cover the card with a client test.
+- Reference implementations: `dsh-claude-usage`, `dsh-codex-usage`, `dsh-conversation-stats`, `dsh-image-preview`, `dsh-workspace-git`.
+
+Deployment-level tunables still belong in the host-side Schemastery `Config`; the settings UI carries the user's runtime preferences.
+
 ## New plugin lifecycle
 
 Whenever we create a new plugin:
