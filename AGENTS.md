@@ -40,3 +40,15 @@ Whenever we create a new plugin:
 - We always commit to `main` and push whenever we finish a new version of stuff. Finishing work means: changes committed on `main`, pushed to `origin/main` — including any version bump in `package.json`.
 - Commit each coherent unit of work as it completes rather than in bulk at the end of a session.
 - Feature branches may be used for experiments, but a finished version always lands on `main` and is pushed before the work is reported done.
+
+### Correct publish on every finished change
+
+Never finish new features or fixes without shipping them properly. Every completed unit of work gets the full release treatment:
+
+1. **Bump the version** — update `version` in the plugin's `package.json` following semver before committing the work: patch (`0.1.6` → `0.1.7`) for bug fixes, minor (`0.1.x` → `0.2.0`) for new features, major (`0.x.y` → `1.0.0`) for breaking changes. Never commit shipped changes while leaving the version untouched.
+2. **Verify green** — run the plugin's full gate (`typecheck`, `test`, `build`) before publishing. The `prepack`/`prepublishOnly` scripts enforce this; let them run, never bypass or skip them.
+3. **Commit and push** — land the version bump together with the finished work on `main` and push to `origin/main`.
+4. **Tag the release** — create git tag `vX.Y.Z` exactly matching `package.json` and push it (`git push origin vX.Y.Z`). A mismatched tag must never ship; fix the version instead of retagging.
+5. **Publish the package** — if the repo has a release workflow (e.g. `release.yml`), creating the GitHub Release for the tag triggers the automatic npm publish with provenance; otherwise publish manually with `pnpm publish --access public` from a clean, checked-out `main` after the checks pass. For git-host-only distribution, confirm the `prepare` script builds the published entry points standalone before tagging.
+
+Keep `main` release-ready at all times: any commit on `main` must be safe to tag and publish as-is.
