@@ -31,3 +31,6 @@
 [submodule "dsh-plugin-manager"]
 	path = dsh-plugin-manager
 	url = https://github.com/leonardoxr/dsh-plugin-manager.git
+[submodule "dsh-harness-updater"]
+	path = dsh-harness-updater
+	url = https://github.com/leonardoxr/dsh-harness-updater.git
