@@ -9,7 +9,7 @@ A master repository for DeepSeek Harness plugins. Each plugin remains an indepen
 | [dsh-auto-chat-titles](./dsh-auto-chat-titles) | [leonardoxr/dsh-auto-chat-titles](https://github.com/leonardoxr/dsh-auto-chat-titles) | Semantic, configurable chat titles |
 | [dsh-better-sidebar](./dsh-better-sidebar) | [leonardoxr/DSH-better-sidebar](https://github.com/leonardoxr/DSH-better-sidebar) | Sidebar workbench and extension API |
 | [dsh-codex-usage](./dsh-codex-usage) | [leonardoxr/dsh-codex-usage](https://github.com/leonardoxr/dsh-codex-usage) | Codex usage UI |
-| [dsh-conversation-stats](./dsh-conversation-stats) | [leonardoxr/dsh-conversation-stats](https://github.com/leonardoxr/dsh-conversation-stats) | Conversation statistics row |
+| [dsh-status-bar-config](./dsh-status-bar-config) | [leonardoxr/dsh-status-bar-config](https://github.com/leonardoxr/dsh-status-bar-config) | Conversation statistics row |
 | [dsh-harness-updater](./dsh-harness-updater) | [leonardoxr/dsh-harness-updater](https://github.com/leonardoxr/dsh-harness-updater) | Claude Code / Codex CLI update detection and one-click updates |
 | [dsh-image-preview](./dsh-image-preview) | [leonardoxr/dsh-image-preview](https://github.com/leonardoxr/dsh-image-preview) | Inline image previews and clipboard copying |
 | [dsh-plugin-manager](./dsh-plugin-manager) | [leonardoxr/dsh-plugin-manager](https://github.com/leonardoxr/dsh-plugin-manager) | Profile plugin management |

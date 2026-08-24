@@ -35,7 +35,7 @@ Any option a user can toggle at runtime ships in the DSH settings UI, like every
 - Register the settings card through the slot API inside a lifecycle-managed registration: `ctx.slots.inject('settings.plugin.item', () => ctx.slots.register({ name: 'settings.plugin.item', key: '<plugin-name>' }, SettingsCard))`.
 - Build the card like the existing ones (`SettingsCard.tsx`): typed draft state, explicit save/reset actions, styles scoped with a plugin prefix and themed only via DSH design tokens (`--dsw-alias-*` / `--ds-*`) so skins work.
 - Keep it HMR-safe (all registrations via `ctx.effect`/`ctx.slots.inject` disposers) and cover the card with a client test.
-- Reference implementations: `dsh-claude-usage`, `dsh-codex-usage`, `dsh-conversation-stats`, `dsh-image-preview`, `dsh-workspace-git`.
+- Reference implementations: `dsh-claude-usage`, `dsh-codex-usage`, `dsh-status-bar-config`, `dsh-image-preview`, `dsh-workspace-git`.
 
 Deployment-level tunables still belong in the host-side Schemastery `Config`; the settings UI carries the user's runtime preferences.
 
