@@ -1,7 +1,7 @@
 {
   "name": "dsh-all-in-one",
-  "version": "0.3.4",
-  "description": "All-in-one DeepSeek Harness bundle: one install mounts the whole leonardoxr DSH plugin collection (coding tools, plugin/config managers, sidebar, usage meters, updaters and more).",
+  "version": "0.4.0",
+  "description": "All-in-one DeepSeek Harness bundle: one install mounts the leonardoxr DSH plugin collection (coding tools, plugin manager, sidebar, usage meters, updaters and more).",
   "license": "MIT",
   "author": {
     "name": "leonardoxr",
@@ -51,8 +51,7 @@
     "dsh-claude-usage": "https://github.com/leonardoxr/dsh-claude-usage/releases/download/v0.1.3/dsh-claude-usage-0.1.3.tgz",
     "dsh-codex-usage": "https://github.com/leonardoxr/dsh-codex-usage/releases/download/v0.1.8/dsh-codex-usage-0.1.8.tgz",
     "dsh-coding-tools": "https://github.com/leonardoxr/dsh-coding-tools/releases/download/v0.1.6/dsh-coding-tools-0.1.6.tgz",
-    "dsh-companion": "https://github.com/leonardoxr/dsh-companion/releases/download/v0.2.0/dsh-companion-0.2.0.tgz",
-    "dsh-config-manager": "0.1.51",
+    "dsh-companion": "https://github.com/leonardoxr/dsh-companion/releases/download/v0.3.0/dsh-companion-0.3.0.tgz",
     "dsh-harness-updater": "https://github.com/leonardoxr/dsh-harness-updater/releases/download/v0.1.0/dsh-harness-updater-0.1.0.tgz",
     "dsh-image-preview": "https://github.com/leonardoxr/dsh-image-preview/releases/download/v0.3.1/dsh-image-preview-0.3.1.tgz",
     "dsh-routed-subagent": "https://github.com/leonardoxr/dsh-routed-subagent/releases/download/v0.3.1/dsh-routed-subagent-0.3.1.tgz",

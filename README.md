@@ -11,7 +11,6 @@ A master repository for DeepSeek Harness plugins. Each plugin remains an indepen
 | [dsh-claude-usage](./dsh-claude-usage) | [leonardoxr/dsh-claude-usage](https://github.com/leonardoxr/dsh-claude-usage) | Claude usage UI |
 | [dsh-codex-usage](./dsh-codex-usage) | [leonardoxr/dsh-codex-usage](https://github.com/leonardoxr/dsh-codex-usage) | Codex usage UI |
 | [dsh-coding-tools](./dsh-coding-tools) | [leonardoxr/dsh-coding-tools](https://github.com/leonardoxr/dsh-coding-tools) | LSP, ast-grep and versioned editing tools |
-| [dsh-config-manager](./dsh-config-manager) | [xiajiajun516/dsh-config-manager](https://github.com/xiajiajun516/dsh-config-manager) | Credentials, presets and settings management |
 | [dsh-status-bar-config](./dsh-status-bar-config) | [leonardoxr/dsh-status-bar-config](https://github.com/leonardoxr/dsh-status-bar-config) | Conversation statistics row |
 
 ## dsh-all-in-one
