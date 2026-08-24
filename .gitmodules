@@ -34,3 +34,9 @@
 [submodule "dsh-harness-updater"]
 	path = dsh-harness-updater
 	url = https://github.com/leonardoxr/dsh-harness-updater.git
+[submodule "dsh-config-manager"]
+	path = dsh-config-manager
+	url = https://github.com/xiajiajun516/dsh-config-manager.git
+[submodule "dsh-claude-usage"]
+	path = dsh-claude-usage
+	url = https://github.com/leonardoxr/dsh-claude-usage.git
