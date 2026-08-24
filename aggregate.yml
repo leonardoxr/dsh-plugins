@@ -1,0 +1,112 @@
+# dsh-all-in-one -- aggregate manifest
+#
+# Single source of truth for the all-in-one DSH bundle published from this
+# repository. Everything downstream is generated:
+#
+#   pnpm generate          regenerates package.json dependencies + cordis.patch.yml
+#   pnpm verify            fails when the generated outputs drifted from disk
+#
+# Never hand-edit package.json "dependencies" or cordis.patch.yml.
+#
+# Fields per plugin:
+#   package   npm package name of the plugin (also the loader row "name")
+#   id        canonical Cordis row ID used by the plugin's own standalone bundle;
+#             reusing it keeps existing profile-patch config overrides working
+#   version   exact upstream version this aggregate pins (informational + guard)
+#   channel   npm            -> dependencies entry is the exact npm version
+#              github-release -> dependencies entry is the release tarball URL
+#   spec      dependency spec written into package.json (derived by the generator,
+#             may be overridden here for unusual cases)
+#   enabled   false excludes the plugin from deps and rows entirely
+
+package:
+  name: dsh-all-in-one
+  version: 0.1.0
+
+plugins:
+  # --- host tools -----------------------------------------------------------
+  - package: dsh-coding-tools
+    id: dsh-coding-tools
+    version: 0.1.6
+    channel: github-release
+    spec: https://github.com/leonardoxr/dsh-coding-tools/releases/download/v0.1.6/dsh-coding-tools-0.1.6.tgz
+
+  - package: '@leonardoxr/dsh-plugin-manager'
+    id: dsh-plugin-manager
+    version: 0.2.0
+    channel: github-release
+    spec: https://github.com/leonardoxr/dsh-plugin-manager/releases/download/v0.2.0/leonardoxr-dsh-plugin-manager-0.2.0.tgz
+
+  - package: dsh-config-manager
+    id: config-manager
+    version: 0.1.51
+    channel: npm
+
+  - package: dsh-routed-subagent
+    id: routed-subagent
+    version: 0.3.0
+    channel: github-release
+    spec: https://github.com/leonardoxr/dsh-routed-subagent/releases/download/v0.3.0/dsh-routed-subagent-0.3.0.tgz
+
+  - package: dsh-status-bar-config
+    id: dsh-status-bar-config
+    version: 0.2.1
+    channel: github-release
+    spec: https://github.com/leonardoxr/dsh-status-bar-config/releases/download/v0.2.1/dsh-status-bar-config-0.2.1.tgz
+
+  - package: dsh-workspace-git
+    id: workspace-git
+    version: 0.1.1
+    channel: github-release
+    spec: https://github.com/leonardoxr/dsh-workspace-git/releases/download/v0.1.1/dsh-workspace-git-0.1.1.tgz
+
+  # --- UI extensions --------------------------------------------------------
+  - package: dsh-better-sidebar
+    id: better-sidebar
+    version: 0.15.2
+    channel: npm
+
+  - package: dsh-auto-chat-titles
+    id: auto-chat-titles
+    version: 0.1.0
+    channel: github-release
+    spec: https://github.com/leonardoxr/dsh-auto-chat-titles/releases/download/v0.1.0/dsh-auto-chat-titles-0.1.0.tgz
+
+  - package: dsh-claude-usage
+    id: claude-usage
+    version: 0.1.0
+    channel: github-release
+    spec: https://github.com/leonardoxr/dsh-claude-usage/releases/download/v0.1.0/dsh-claude-usage-0.1.0.tgz
+
+  - package: dsh-codex-usage
+    id: codex-usage
+    version: 0.1.5
+    channel: github-release
+    spec: https://github.com/leonardoxr/dsh-codex-usage/releases/download/v0.1.5/dsh-codex-usage-0.1.5.tgz
+
+  - package: dsh-harness-updater
+    id: harness-updater
+    version: 0.1.0
+    channel: github-release
+    spec: https://github.com/leonardoxr/dsh-harness-updater/releases/download/v0.1.0/dsh-harness-updater-0.1.0.tgz
+
+  - package: dsh-image-preview
+    id: dsh-image-preview
+    version: 0.3.0
+    channel: github-release
+    spec: https://github.com/leonardoxr/dsh-image-preview/releases/download/v0.3.0/dsh-image-preview-0.3.0.tgz
+
+  - package: dsh-companion
+    id: dsh-companion
+    version: 0.2.0
+    channel: github-release
+    spec: https://github.com/leonardoxr/dsh-companion/releases/download/v0.2.0/dsh-companion-0.2.0.tgz
+
+# Extra patch entries contributed by the aggregate itself.
+extraRows:
+  # dsh-auto-chat-titles' own bundle disables the core session-title LLM
+  # provider so its semantic titler can replace it; reproduce that here.
+  - requiresPlugin: dsh-auto-chat-titles
+    entry:
+      id: session-title-llm
+      disabled: true

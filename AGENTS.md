@@ -12,6 +12,26 @@ This is a coordination repository. Plugin directories retain independent Git his
 - Use package-prefixed IDs and public DSH service APIs.
 - For better-sidebar consumers, use `ctx.effect(() => register...)` and optional peer dependencies.
 
+## dsh-all-in-one aggregate (repo root)
+
+The repository root doubles as the **dsh-all-in-one** aggregate bundle package —
+the sanctioned exception to "one plugin per directory": it ships no code, only
+composition. Rules:
+
+- `aggregate.yml` is the single source of truth. Never hand-edit the generated
+  outputs: root `package.json` "dependencies" and root `cordis.patch.yml` are
+  produced by `pnpm generate` (scripts/aggregate.mjs) and guarded by
+  `pnpm verify` (also wired as prepack/test).
+- Row IDs in the aggregate reuse each plugin's canonical standalone ID, and
+  every row carries a `!!js` self-back-off guard against earlier mounts of the
+  same package. Do not introduce namespaced IDs or remove guards.
+- Changing the collection (add/remove/upgrade a plugin): edit `aggregate.yml`,
+  run `pnpm generate`, commit manifest + both generated files together, then
+  follow the normal release flow for this repository.
+- The suite depends on released artifacts only: exact npm versions or GitHub
+  Release tarball URLs. A version may only be pinned after its tag is pushed
+  and its release asset exists.
+
 ## Plugin authoring standards
 
 Follow the official guides at https://deepseek-harness.github.io/deepseek-harness/en/develop/basic/ ("Your first plugin", "Build a tool", "Plugin configuration", "Package and install a plugin"):
