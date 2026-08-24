@@ -21,7 +21,7 @@
 
 package:
   name: dsh-all-in-one
-  version: 0.3.0
+  version: 0.3.1
 
 plugins:
   # --- host tools -----------------------------------------------------------
@@ -75,15 +75,15 @@ plugins:
 
   - package: dsh-claude-usage
     id: claude-usage
-    version: 0.1.0
+    version: 0.1.1
     channel: github-release
-    spec: https://github.com/leonardoxr/dsh-claude-usage/releases/download/v0.1.0/dsh-claude-usage-0.1.0.tgz
+    spec: https://github.com/leonardoxr/dsh-claude-usage/releases/download/v0.1.1/dsh-claude-usage-0.1.1.tgz
 
   - package: dsh-codex-usage
     id: codex-usage
-    version: 0.1.5
+    version: 0.1.6
     channel: github-release
-    spec: https://github.com/leonardoxr/dsh-codex-usage/releases/download/v0.1.5/dsh-codex-usage-0.1.5.tgz
+    spec: https://github.com/leonardoxr/dsh-codex-usage/releases/download/v0.1.6/dsh-codex-usage-0.1.6.tgz
 
   - package: dsh-harness-updater
     id: harness-updater
