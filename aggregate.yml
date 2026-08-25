@@ -21,7 +21,7 @@
 
 package:
   name: dsh-all-in-one
-  version: 0.3.7
+  version: 0.3.8
 
 plugins:
   # --- host tools -----------------------------------------------------------
@@ -64,9 +64,9 @@ plugins:
 
   - package: dsh-claude-usage
     id: claude-usage
-    version: 0.1.3
+    version: 0.1.4
     channel: github-release
-    spec: https://github.com/leonardoxr/dsh-claude-usage/releases/download/v0.1.3/dsh-claude-usage-0.1.3.tgz
+    spec: https://github.com/leonardoxr/dsh-claude-usage/releases/download/v0.1.4/dsh-claude-usage-0.1.4.tgz
 
   - package: dsh-codex-usage
     id: codex-usage
