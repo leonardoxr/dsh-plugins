@@ -21,7 +21,7 @@
 
 package:
   name: dsh-all-in-one
-  version: 0.5.6
+  version: 0.5.7
 
 plugins:
   # --- host tools -----------------------------------------------------------
@@ -76,9 +76,9 @@ plugins:
 
   - package: dsh-harness-updater
     id: harness-updater
-    version: 0.2.0
+    version: 0.2.1
     channel: github-release
-    spec: https://github.com/leonardoxr/dsh-harness-updater/releases/download/v0.2.0/dsh-harness-updater-0.2.0.tgz
+    spec: https://github.com/leonardoxr/dsh-harness-updater/releases/download/v0.2.1/dsh-harness-updater-0.2.1.tgz
 
   - package: dsh-image-preview
     id: dsh-image-preview
