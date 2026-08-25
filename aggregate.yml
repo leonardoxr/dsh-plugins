@@ -21,7 +21,7 @@
 
 package:
   name: dsh-all-in-one
-  version: 0.4.1
+  version: 0.5.0
 
 plugins:
   # --- host tools -----------------------------------------------------------
@@ -88,9 +88,9 @@ plugins:
 
   - package: dsh-companion
     id: dsh-companion
-    version: 0.2.2
+    version: 0.4.0
     channel: github-release
-    spec: https://github.com/leonardoxr/dsh-companion/releases/download/v0.2.2/dsh-companion-0.2.2.tgz
+    spec: https://github.com/leonardoxr/dsh-companion/releases/download/v0.4.0/dsh-companion-0.4.0.tgz
 
 # Extra patch entries contributed by the aggregate itself.
 extraRows:
