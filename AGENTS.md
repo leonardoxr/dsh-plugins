@@ -59,6 +59,18 @@ Any option a user can toggle at runtime ships in the DSH settings UI, like every
 
 Deployment-level tunables still belong in the host-side Schemastery `Config`; the settings UI carries the user's runtime preferences.
 
+### Client render stability: never key load effects on unstable references
+
+A client component that loads a resource asynchronously (an image attachment, a session snapshot, a file) in a `useEffect` must not list per-render function or object references in that effect's dependency array. Slot `inject` closures (`loadImage: (a) => loadSessionImage(...)`) and props derived with `useMemo(() => f(block), [block])` are recreated whenever the slot host re-renders. If either is a dependency, every surrounding re-render tears the resource down (revoking the object URL, cancelling the read) and fetches it again — the resource visibly reloads on each turn with no user action. This is exactly the `dsh-image-preview` read_image reload bug fixed in v0.3.2.
+
+The pattern to follow:
+
+- Key the load effect on a **stable scalar identity** (e.g. `attachment.attachmentId`, `callId`) plus the state that genuinely changes the load (`attempt`, `failed`, `open`).
+- Keep the latest loader / derived object in refs updated each render (`const loaderRef = useRef(load); loaderRef.current = load`) and call `loaderRef.current(...)` inside the effect. Reading `.current` is not a dependency, so unrelated re-renders reuse the already-loaded resource instead of refetching.
+- Apply the same stable identity to any copy-listener / reset effect dependencies.
+
+Only fetch when the underlying resource actually changes (a new id, a retry, an open) — never because an unrelated re-render produced a new closure or a new memoized object. Add a client test that re-renders the same resource through a fresh block object and a fresh loader and asserts the loader is **not** invoked again (reference: `dsh-image-preview/tests/client.test.tsx`).
+
 ### Hot-reload development loop
 
 Hot module reload is enabled in this deployment: the web profile patch (`C:\Users\leona\.dsh\profiles\web\cordis.patch.yml`) re-enables the harness-shipped Cordis HMR service with watchers on every plugin's build output (`lib/`, `dist/` for `dsh-companion`). Full details in [HOT-RELOAD.md](./HOT-RELOAD.md).
