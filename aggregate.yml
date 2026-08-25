@@ -21,7 +21,7 @@
 
 package:
   name: dsh-all-in-one
-  version: 0.3.8
+  version: 0.3.9
 
 plugins:
   # --- host tools -----------------------------------------------------------
@@ -82,9 +82,9 @@ plugins:
 
   - package: dsh-image-preview
     id: dsh-image-preview
-    version: 0.3.1
+    version: 0.3.2
     channel: github-release
-    spec: https://github.com/leonardoxr/dsh-image-preview/releases/download/v0.3.1/dsh-image-preview-0.3.1.tgz
+    spec: https://github.com/leonardoxr/dsh-image-preview/releases/download/v0.3.2/dsh-image-preview-0.3.2.tgz
 
   - package: dsh-companion
     id: dsh-companion

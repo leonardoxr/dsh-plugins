@@ -1,6 +1,6 @@
 {
   "name": "dsh-all-in-one",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "description": "All-in-one DeepSeek Harness bundle: one install mounts the whole leonardoxr DSH plugin collection (coding tools, plugin/config managers, sidebar, usage meters, updaters and more).",
   "license": "MIT",
   "author": {
@@ -52,7 +52,7 @@
     "dsh-coding-tools": "https://github.com/leonardoxr/dsh-coding-tools/releases/download/v0.1.6/dsh-coding-tools-0.1.6.tgz",
     "dsh-companion": "https://github.com/leonardoxr/dsh-companion/releases/download/v0.2.2/dsh-companion-0.2.2.tgz",
     "dsh-harness-updater": "https://github.com/leonardoxr/dsh-harness-updater/releases/download/v0.1.0/dsh-harness-updater-0.1.0.tgz",
-    "dsh-image-preview": "https://github.com/leonardoxr/dsh-image-preview/releases/download/v0.3.1/dsh-image-preview-0.3.1.tgz",
+    "dsh-image-preview": "https://github.com/leonardoxr/dsh-image-preview/releases/download/v0.3.2/dsh-image-preview-0.3.2.tgz",
     "dsh-routed-subagent": "https://github.com/leonardoxr/dsh-routed-subagent/releases/download/v0.3.1/dsh-routed-subagent-0.3.1.tgz",
     "dsh-status-bar-config": "https://github.com/leonardoxr/dsh-status-bar-config/releases/download/v0.2.1/dsh-status-bar-config-0.2.1.tgz",
     "dsh-workspace-git": "https://github.com/leonardoxr/dsh-workspace-git/releases/download/v0.1.1/dsh-workspace-git-0.1.1.tgz"
